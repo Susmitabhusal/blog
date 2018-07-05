@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use \App\Model\Category;
 
 class CategoryController extends Controller
 {
+protected $table = 'category'; 
+
     /**
      * Display a listing of the resource.
      *
@@ -14,6 +17,10 @@ class CategoryController extends Controller
     public function index()
     {
         //
+
+        $categories=\App\Model\Category::all();
+
+        return view('back.categories.index', compact('categories'));
     }
 
     /**

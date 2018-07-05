@@ -12,8 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('back.master');
 });
+
+Route::resource('/category','CategoryController');
+Route::resource('/blog','BlogController');
 
 Auth::routes();
 
